@@ -1,0 +1,71 @@
+$base-backgroundColor : #1A1A1A;
+$default_color : #F9F9FA;
+$unover_color : #B2B0B0;
+$brown_color : #C9AB81;
+
+
+@mixin flex-space-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-space-around{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+button{
+    background-color: unset;
+}
+
+body{
+    background-color: #000;
+    color: $default_color;
+}
+// header
+.header{
+    @include flex-space-around;
+    padding: 20px 0;
+    // header_logo
+    &_logo img{
+        width: 130px;
+    }
+    // header_menu
+    &_menu{
+        // header_menu-box
+        &-box{
+            @include flex-space-center;       
+            // header-menu-box-item  
+            &-item a{
+                color: $unover_color;
+                margin-left: 18px;          
+            }
+        }
+    }
+    // header_shopping
+    &_shopping{
+        @include flex-space-around;
+        &_button{
+            color: $brown_color;
+            border: 1px solid $brown_color;
+        }
+        &_phone{
+            color: $brown_color;
+        }
+    }
+}
