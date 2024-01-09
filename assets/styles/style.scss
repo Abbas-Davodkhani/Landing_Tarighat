@@ -3,69 +3,183 @@ $default_color : #F9F9FA;
 $unover_color : #B2B0B0;
 $brown_color : #C9AB81;
 
+@import url(./font.css);
 
-@mixin flex-space-center{
+@mixin flex-space-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin flex-space-around{
+@mixin flex-space-around {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-*{
+@mixin flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+@mixin over_on_button {
+    color: #fff !important;
+    background-color: $brown_color;
+}
+
+@mixin actions{
+    border: 2px solid #fff;
+    color: $brown_color;
+    padding: 5px 20px;
+    border-radius: 7px;
+    transition: all ease-in .3s;
+}
+
+@mixin actions_hover{
+    background-color: $brown_color;
+}
+// General
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-ul li{
+html {
+    font-family: 'Vazirmatn';
+}
+
+ul li {
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-button{
+button {
     background-color: unset;
 }
 
-body{
+body {
     background-color: #000;
     color: $default_color;
+    font-family: 'Vazirmatn';
 }
+
+// Specific
+.button {}
+
 // header
-.header{
+.header {
     @include flex-space-around;
     padding: 20px 0;
+
     // header_logo
-    &_logo img{
+    &_logo img {
         width: 130px;
     }
+
     // header_menu
-    &_menu{
+    &_menu {
+
         // header_menu-box
-        &-box{
-            @include flex-space-center;       
+        &-box {
+            @include flex-space-center;
+
             // header-menu-box-item  
-            &-item a{
+            &-item a {
                 color: $unover_color;
-                margin-left: 18px;          
+                margin-left: 18px;
+
+            }
+
+            &-item {
+                &-button {
+                    padding: 15px 15px 5px 15px;
+                    border: 2px solid $brown_color;
+                    border-radius: 7px;
+                    color: $brown_color !important;
+                    transition: all ease-in .4s;
+
+                    &:hover {
+                        @include over_on_button;
+                    }
+                }
+
+                &-active {
+                    color: #fff !important;
+                }
             }
         }
     }
+
     // header_shopping
-    &_shopping{
+    &_shopping {
         @include flex-space-around;
-        &_button{
+
+        &_button {
             color: $brown_color;
             border: 1px solid $brown_color;
         }
-        &_phone{
+
+        &_phone {
             color: $brown_color;
+            font-size: 25px;
+        }
+    }
+}
+
+// slide_top
+.slide_top {
+    
+    height: 80vh;
+
+    &_box {
+        width: 80%;
+        margin: auto;
+ 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &_title {
+            color: $brown_color;
+            font-weight: bold;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        &_description {
+            margin-bottom: 20px;
+        }
+
+        &_actions {
+            display: flex;
+            align-items: center;
+            gap: 170px;
+          
+            &-start{
+                @include actions;
+                &:hover{
+                    @include actions_hover;
+                }
+            }
+            &-order{
+                @include actions;
+                &:hover{
+                    @include actions_hover;
+                }
+            }
+            &-request{
+                @include actions;
+                &:hover{
+                    @include actions_hover;
+                }
+            }
         }
     }
 }
