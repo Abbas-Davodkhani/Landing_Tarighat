@@ -64,19 +64,16 @@ button {
 }
 
 body {
-    background-color: #000;
+    background-color: $base-backgroundColor;
     color: $default_color;
     font-family: 'Vazirmatn';
 }
-
-// Specific
-.button {}
 
 // header
 .header {
     @include flex-space-around;
     padding: 20px 0;
-
+    height: 15vh;
     // header_logo
     &_logo img {
         width: 130px;
@@ -135,7 +132,7 @@ body {
 // slide_top
 .slide_top {
     
-    height: 80vh;
+    height: 75vh;
 
     &_box {
         width: 80%;
@@ -181,5 +178,19 @@ body {
                 }
             }
         }
+    }
+}
+// bottom_navigation
+.bottom_navigation{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background-color: #000;
+    &_box{
+        @include flex-space-around;
+        height: 100%;
+
     }
 }

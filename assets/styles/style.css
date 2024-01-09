@@ -22,7 +22,7 @@ button {
 }
 
 body {
-  background-color: #000;
+  background-color: #1A1A1A;
   color: #F9F9FA;
   font-family: "Vazirmatn";
 }
@@ -32,6 +32,7 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 20px 0;
+  height: 15vh;
 }
 .header_logo img {
   width: 130px;
@@ -74,7 +75,7 @@ body {
 }
 
 .slide_top {
-  height: 80vh;
+  height: 75vh;
 }
 .slide_top_box {
   width: 80%;
@@ -127,4 +128,19 @@ body {
 }
 .slide_top_box_actions-request:hover {
   background-color: #C9AB81;
+}
+
+.bottom_navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  background-color: #000;
+}
+.bottom_navigation_box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */
