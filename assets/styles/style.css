@@ -86,13 +86,31 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.header_top_shopping_button {
-  color: #C9AB81;
-  border: 1px solid #C9AB81;
+.header_top_shopping > a {
+  padding: 15px 15px 5px 15px;
+  border: 2px solid #C9AB81;
+  border-radius: 7px;
+  color: #C9AB81 !important;
+  transition: all ease-in 0.4s;
+}
+.header_top_shopping > a:hover {
+  color: #fff !important;
+  background-color: #C9AB81;
 }
 .header_top_shopping_phone {
   color: #C9AB81;
   font-size: 25px;
+}
+@media screen and (max-width: 1124px) {
+  .header_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+  }
+  .header_top_menu {
+    display: none;
+  }
 }
 
 .main_box {
@@ -198,6 +216,9 @@ body {
   color: #C9AB81;
 }
 .main_about_box_right_more {
+  margin: 20px 0;
+}
+.main_about_box_right_more_button {
   padding: 15px 20px 5px 20px;
   border: 1px solid #C9AB81;
   border-radius: 7px;
@@ -205,7 +226,7 @@ body {
   transition: all ease-in 0.4s;
   font-size: 15px;
 }
-.main_about_box_right_more:hover {
+.main_about_box_right_more_button:hover {
   color: #fff !important;
   background-color: #C9AB81;
 }
@@ -281,6 +302,10 @@ body {
   align-items: center;
   padding: 5px 0;
   color: #B2B0B0;
+  font-size: small;
+}
+.main_stations_box_places ul {
+  margin: 0 0 0 10px;
 }
 .main_stations_box_places ul li {
   margin: 0 0 25px 0;
@@ -299,8 +324,52 @@ body {
   background-color: #C9AB81;
 }
 .main_stations_box_places video {
-  width: 488px;
+  max-width: 100%;
   height: auto;
+}
+@media screen and (max-width: 980px) {
+  .main_stations_box_places {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 0;
+    color: #B2B0B0;
+    font-size: small;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_about {
+    padding: 100px 0;
+    background-color: #000;
+  }
+  .main_about_box {
+    flex-direction: column-reverse;
+  }
+  .main_about_box_right {
+    width: 100%;
+  }
+  .main_about_box_left {
+    width: 100%;
+  }
+  .main_statistics {
+    height: auto;
+  }
+  .main_statistics_box {
+    padding: 20px 20px;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .main_statistics_box_items {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px 0;
+  }
+  .main_box_content_actions {
+    gap: 30px;
+    flex-direction: column;
+    align-items: start;
+  }
 }
 
 .tarighat_text {

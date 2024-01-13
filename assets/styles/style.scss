@@ -96,6 +96,7 @@ body {
     right: 0;
     z-index: 1;
 
+
     &_top {
         display: flex;
         justify-content: space-around;
@@ -144,9 +145,16 @@ body {
         &_shopping {
             @include flex-space-around;
 
-            &_button {
-                color: $brown_color;
-                border: 1px solid $brown_color;
+            &>a {
+                padding: 15px 15px 5px 15px;
+                border: 2px solid $brown_color;
+                border-radius: 7px;
+                color: $brown_color !important;
+                transition: all ease-in .4s;
+
+                &:hover {
+                    @include over_on_button_with_background;
+                }
             }
 
             &_phone {
@@ -157,8 +165,22 @@ body {
 
     }
 
+    @media screen and (max-width : 1124px) {
+        &_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
 
+            &_menu {
+                display: none;
+            }
+        }
+
+
+    }
 }
+
 // main
 .main {
     &_box {
@@ -270,16 +292,20 @@ body {
                 }
 
                 &_more {
-                    padding: 15px 20px 5px 20px;
-                    border: 1px solid #C9AB81;
-                    border-radius: 7px;
-                    color: #C9AB81 !important;
-                    transition: all ease-in 0.4s;
-                    font-size: 15px;
-
-                    &:hover {
-                        @include over_on_button_with_background;
+                    margin: 20px 0;
+                    &_button{
+                        padding: 15px 20px 5px 20px;
+                        border: 1px solid #C9AB81;
+                        border-radius: 7px;
+                        color: #C9AB81 !important;
+                        transition: all ease-in 0.4s;
+                        font-size: 15px;
+    
+                        &:hover {
+                            @include over_on_button_with_background;
+                        }
                     }
+                    
                 }
             }
 
@@ -365,9 +391,16 @@ body {
             }
 
             &_places {
-                @include flex-space-between;
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
                 padding: 5px 0;
-                color: $unover_color;
+                color: #B2B0B0;
+                font-size: small;
+            }
+            
+            &_places ul {
+                margin: 0 0 0 10px;
             }
 
             &_places ul li {
@@ -389,16 +422,87 @@ body {
             }
 
             &_places video {
-                width: 488px;
+                max-width: 100%;
                 height: auto;
             }
         }
+
+
+    }
+
+    @media screen and (max-width : 980px) {
+        &_stations {       
+            &_box {
+                &_places {
+                    display: flex;
+                    justify-content: space-between; 
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 5px 0;
+                    color: #B2B0B0;
+                    font-size: small;
+                } 
+                
+            }
+            
+        }  
+        
+        
+    }
+
+    @media screen and (max-width : 768px) {
+
+
+        &_about {
+            padding: 100px 0;
+            background-color: #000;
+    
+            &_box {
+                flex-direction: column-reverse;
+                &_right {
+                    width: 100%;
+                }
+    
+                &_left {
+                    width: 100%;
+                }
+            }
+        }
+    
+
+        &_statistics {
+            height: auto;
+            &_box {
+                padding: 20px 20px;
+                flex-direction: column;
+                justify-content: space-around;
+                &_items {
+                    width: 100%;
+                    margin: 20px 0; 
+                    padding: 20px 0;  
+                }
+                
+            }
+        } 
+        
+        &_box{
+            &_content {
+                &_actions {
+                    gap: 30px;
+                    flex-direction: column;
+                    align-items: start;
+                }
+            }
+        }
+
     }
 }
+
 // 
 .tarighat_text {
     color: $brown_color;
 }
+
 // bottom_navigation 
 .bottom_navigation {
     position: fixed;
