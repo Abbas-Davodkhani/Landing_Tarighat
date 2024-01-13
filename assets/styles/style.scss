@@ -2,6 +2,7 @@ $base-backgroundColor : #1A1A1A;
 $default_color : #F9F9FA;
 $unover_color : #B2B0B0;
 $brown_color : #C9AB81;
+$white : #fff;
 
 @import url(./font.css);
 
@@ -24,22 +25,23 @@ $brown_color : #C9AB81;
 }
 
 
-@mixin over_on_button {
-    color: #fff !important;
+@mixin over_on_button_with_background {
+    color: $white !important;
     background-color: $brown_color;
 }
 
-@mixin actions{
-    border: 2px solid #fff;
+@mixin actions {
+    border: 2px solid $white;
     color: $brown_color;
     padding: 5px 20px;
     border-radius: 7px;
     transition: all ease-in .3s;
 }
 
-@mixin actions_hover{
+@mixin actions_hover {
     background-color: $brown_color;
 }
+
 // General
 * {
     margin: 0;
@@ -57,6 +59,7 @@ ul li {
 
 a {
     text-decoration: none;
+    color: $white;
 }
 
 button {
@@ -71,73 +74,77 @@ body {
 
 // header
 .header {
-    @include flex-space-around;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding: 20px 0;
-    height: 15vh;
-    // header_logo
-    &_logo img {
-        width: 130px;
-    }
+    height: 100vh;
 
-    // header_menu
-    &_menu {
+    &_top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-        // header_menu-box
-        &-box {
-            @include flex-space-center;
+        // header_logo  
+        &_logo img {
+            width: 130px;
+        }
 
-            // header-menu-box-item  
-            &-item a {
-                color: $unover_color;
-                margin-left: 18px;
+        // header_menu
+        &_menu {
 
-            }
+            // header_menu-box
+            &-box {
+                @include flex-space-center;
 
-            &-item {
-                &-button {
-                    padding: 15px 15px 5px 15px;
-                    border: 2px solid $brown_color;
-                    border-radius: 7px;
-                    color: $brown_color !important;
-                    transition: all ease-in .4s;
+                // header-menu-box-item  
+                &-item a {
+                    color: $unover_color;
+                    margin-left: 18px;
 
-                    &:hover {
-                        @include over_on_button;
+                }
+
+                &-item {
+                    &-button {
+                        padding: 15px 15px 5px 15px;
+                        border: 2px solid $brown_color;
+                        border-radius: 7px;
+                        color: $brown_color !important;
+                        transition: all ease-in .4s;
+
+                        &:hover {
+                            @include over_on_button_with_background;
+                        }
+                    }
+
+                    &-active {
+                        color: $white !important;
                     }
                 }
-
-                &-active {
-                    color: #fff !important;
-                }
             }
         }
-    }
 
-    // header_shopping
-    &_shopping {
-        @include flex-space-around;
+        // header_shopping
+        &_shopping {
+            @include flex-space-around;
 
-        &_button {
-            color: $brown_color;
-            border: 1px solid $brown_color;
+            &_button {
+                color: $brown_color;
+                border: 1px solid $brown_color;
+            }
+
+            &_phone {
+                color: $brown_color;
+                font-size: 25px;
+            }
         }
 
-        &_phone {
-            color: $brown_color;
-            font-size: 25px;
-        }
     }
-}
-
-// slide_top
-.slide_top {
-    
-    height: 75vh;
 
     &_box {
         width: 80%;
         margin: auto;
- 
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -158,39 +165,129 @@ body {
             display: flex;
             align-items: center;
             gap: 170px;
-          
-            &-start{
+            color: #fff;
+
+            &-start {
                 @include actions;
-                &:hover{
+
+                &:hover {
                     @include actions_hover;
                 }
             }
-            &-order{
+
+            &-order {
                 @include actions;
-                &:hover{
+
+                &:hover {
                     @include actions_hover;
                 }
             }
-            &-request{
+
+            &-request {
                 @include actions;
-                &:hover{
+
+                &:hover {
                     @include actions_hover;
                 }
             }
         }
     }
 }
+
+.content{
+
+}
+// slide_top
+// .slide_top {
+
+//     height: 85vh;
+
+
+// }
+
 // bottom_navigation
-.bottom_navigation{
+
+
+.about {
+    padding: 100px 0;
+    background-color: #000;
+    &_box {
+        display: flex;
+        width: 80%;
+        margin: auto;
+        font-size: 22px;
+        &_right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 50%;
+            &_icon{
+                color: $brown_color;
+            }
+            &_title{
+                color: $brown_color;
+            }
+            &_manager{
+                color: $unover_color;
+            }
+            &_text{
+                font-size: 15px;
+                &>span{
+                    color: $brown_color;
+                }
+            }
+            &_more{
+                padding: 15px 20px 5px 20px;
+                border: 1px solid #C9AB81;
+                border-radius: 7px;
+                color: #C9AB81 !important;
+                transition: all ease-in 0.4s;
+                font-size: 15px;
+                &:hover{
+                    @include over_on_button_with_background;
+                }
+            }
+        }
+        &_left{
+             width: 50%;
+             &_image_box{
+                padding: 20px 20px 20px 20px;
+                &>img{
+                    max-width: 100%;
+                }
+             }      
+        }
+    }
+}
+
+
+.bottom_navigation {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 10vh;
+    // height: 10vh;
     background-color: #000;
-    &_box{
-        @include flex-space-around;
+    z-index: 100;
+    padding: 10px 0;
+
+    &_box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         height: 100%;
 
+        &>li {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            transition: all ease-in .3s;
+            font-size: 13px;
+
+            &:hover {
+                color: $brown_color;
+                cursor: pointer;
+            }
+        }
     }
 }

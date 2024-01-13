@@ -15,6 +15,7 @@ ul li {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 button {
@@ -29,55 +30,56 @@ body {
 
 .header {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+  height: 100vh;
+}
+.header_top {
+  display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px 0;
-  height: 15vh;
 }
-.header_logo img {
+.header_top_logo img {
   width: 130px;
 }
-.header_menu-box {
+.header_top_menu-box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header_menu-box-item a {
+.header_top_menu-box-item a {
   color: #B2B0B0;
   margin-left: 18px;
 }
-.header_menu-box-item-button {
+.header_top_menu-box-item-button {
   padding: 15px 15px 5px 15px;
   border: 2px solid #C9AB81;
   border-radius: 7px;
   color: #C9AB81 !important;
   transition: all ease-in 0.4s;
 }
-.header_menu-box-item-button:hover {
+.header_top_menu-box-item-button:hover {
   color: #fff !important;
   background-color: #C9AB81;
 }
-.header_menu-box-item-active {
+.header_top_menu-box-item-active {
   color: #fff !important;
 }
-.header_shopping {
+.header_top_shopping {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.header_shopping_button {
+.header_top_shopping_button {
   color: #C9AB81;
   border: 1px solid #C9AB81;
 }
-.header_shopping_phone {
+.header_top_shopping_phone {
   color: #C9AB81;
   font-size: 25px;
 }
-
-.slide_top {
-  height: 75vh;
-}
-.slide_top_box {
+.header_box {
   width: 80%;
   margin: auto;
   height: 100%;
@@ -85,49 +87,103 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.slide_top_box_title {
+.header_box_title {
   color: #C9AB81;
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 20px;
 }
-.slide_top_box_description {
+.header_box_description {
   margin-bottom: 20px;
 }
-.slide_top_box_actions {
+.header_box_actions {
   display: flex;
   align-items: center;
   gap: 170px;
+  color: #fff;
 }
-.slide_top_box_actions-start {
+.header_box_actions-start {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.slide_top_box_actions-start:hover {
+.header_box_actions-start:hover {
   background-color: #C9AB81;
 }
-.slide_top_box_actions-order {
+.header_box_actions-order {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.slide_top_box_actions-order:hover {
+.header_box_actions-order:hover {
   background-color: #C9AB81;
 }
-.slide_top_box_actions-request {
+.header_box_actions-request {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.slide_top_box_actions-request:hover {
+.header_box_actions-request:hover {
   background-color: #C9AB81;
+}
+
+.about {
+  padding: 100px 0;
+  background-color: #000;
+}
+.about_box {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  font-size: 22px;
+}
+.about_box_right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.about_box_right_icon {
+  color: #C9AB81;
+}
+.about_box_right_title {
+  color: #C9AB81;
+}
+.about_box_right_manager {
+  color: #B2B0B0;
+}
+.about_box_right_text {
+  font-size: 15px;
+}
+.about_box_right_text > span {
+  color: #C9AB81;
+}
+.about_box_right_more {
+  padding: 15px 20px 5px 20px;
+  border: 1px solid #C9AB81;
+  border-radius: 7px;
+  color: #C9AB81 !important;
+  transition: all ease-in 0.4s;
+  font-size: 15px;
+}
+.about_box_right_more:hover {
+  color: #fff !important;
+  background-color: #C9AB81;
+}
+.about_box_left {
+  width: 50%;
+}
+.about_box_left_image_box {
+  padding: 20px 20px 20px 20px;
+}
+.about_box_left_image_box > img {
+  max-width: 100%;
 }
 
 .bottom_navigation {
@@ -135,12 +191,24 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 10vh;
   background-color: #000;
+  z-index: 100;
+  padding: 10px 0;
 }
 .bottom_navigation_box {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+.bottom_navigation_box > li {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: all ease-in 0.3s;
+  font-size: 13px;
+}
+.bottom_navigation_box > li:hover {
+  color: #C9AB81;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
