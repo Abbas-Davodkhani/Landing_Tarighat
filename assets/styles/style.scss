@@ -67,19 +67,34 @@ button {
 }
 
 body {
-    background-color: $base-backgroundColor;
+    background-color: #1A1A1A;
     color: $default_color;
     font-family: 'Vazirmatn';
 }
 
+.test {
+    height: 100vh;
+    width: 100%;
+    background: red;
+
+}
+
+.test>div {
+    height: 100%;
+}
+
+.test>div video {
+    height: 100%;
+    max-width: 100%;
+}
+
 // header
 .header {
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px 0;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 
     &_top {
         display: flex;
@@ -142,59 +157,82 @@ body {
 
     }
 
-    &_box {
-        width: 80%;
-        margin: auto;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
 
-        &_title {
-            color: $brown_color;
-            font-weight: bold;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        &_description {
-            margin-bottom: 20px;
-        }
-
-        &_actions {
-            display: flex;
-            align-items: center;
-            gap: 170px;
-            color: #fff;
-
-            &-start {
-                @include actions;
-
-                &:hover {
-                    @include actions_hover;
-                }
-            }
-
-            &-order {
-                @include actions;
-
-                &:hover {
-                    @include actions_hover;
-                }
-            }
-
-            &-request {
-                @include actions;
-
-                &:hover {
-                    @include actions_hover;
-                }
-            }
-        }
-    }
 }
 
 .main {
+    &_box {
+        height: 100vh;
+
+        &_video>video {
+            height: 100vh;
+            width: 100%;
+            object-fit: fill; // use "cover" to avoid distortion
+            position: absolute;
+            z-index: -1;
+        }
+
+        &_empty {
+            height: 100vh;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            background: rgba(10, 10, 10, .7);
+        }
+
+        &_content {
+            width: 80%;
+            margin: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &_title {
+                color: $brown_color;
+                font-weight: bold;
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            &_description {
+                margin-bottom: 20px;
+            }
+
+            &_actions {
+                display: flex;
+                align-items: center;
+                gap: 170px;
+                color: #fff;
+
+                &-start {
+                    @include actions;
+
+                    &:hover {
+                        @include actions_hover;
+                    }
+                }
+
+                &-order {
+                    @include actions;
+
+                    &:hover {
+                        @include actions_hover;
+                    }
+                }
+
+                &-request {
+                    @include actions;
+
+                    &:hover {
+                        @include actions_hover;
+                    }
+                }
+            }
+        }
+
+    }
+
     &_about {
         padding: 100px 0;
         background-color: #000;
@@ -270,14 +308,14 @@ body {
             height: 100%;
 
             &_items {
-                width: 20%;
+                width: 23%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 height: 80%;
                 justify-content: center;
-                border-radius: 10px;
-                border: 1px solid $white;
+                border-radius: 2px;
+                border: 1px solid #fff;
 
                 &>span {
                     display: block;
@@ -286,7 +324,7 @@ body {
 
                 &-number {
                     color: $brown_color;
-                    font-size: 22px;
+                    font-size: 35px;
                 }
 
             }
@@ -296,11 +334,12 @@ body {
     &_stations {
         padding: 50px 0;
         height: 1050px;
+
         &_box {
             width: 80%;
             margin: auto;
             height: 800px;
-            
+
             &_icon,
             &_description,
             &_places {

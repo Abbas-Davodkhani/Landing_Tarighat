@@ -28,12 +28,27 @@ body {
   font-family: "Vazirmatn";
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 20px 0;
+.test {
   height: 100vh;
+  width: 100%;
+  background: red;
+}
+
+.test > div {
+  height: 100%;
+}
+
+.test > div video {
+  height: 100%;
+  max-width: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 .header_top {
   display: flex;
@@ -79,60 +94,78 @@ body {
   color: #C9AB81;
   font-size: 25px;
 }
-.header_box {
+
+.main_box {
+  height: 100vh;
+}
+.main_box_video > video {
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  position: absolute;
+  z-index: -1;
+}
+.main_box_empty {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background: rgba(10, 10, 10, 0.7);
+}
+.main_box_content {
   width: 80%;
   margin: auto;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.header_box_title {
+.main_box_content_title {
   color: #C9AB81;
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 20px;
 }
-.header_box_description {
+.main_box_content_description {
   margin-bottom: 20px;
 }
-.header_box_actions {
+.main_box_content_actions {
   display: flex;
   align-items: center;
   gap: 170px;
   color: #fff;
 }
-.header_box_actions-start {
+.main_box_content_actions-start {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.header_box_actions-start:hover {
+.main_box_content_actions-start:hover {
   background-color: #C9AB81;
 }
-.header_box_actions-order {
+.main_box_content_actions-order {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.header_box_actions-order:hover {
+.main_box_content_actions-order:hover {
   background-color: #C9AB81;
 }
-.header_box_actions-request {
+.main_box_content_actions-request {
   border: 2px solid #fff;
   color: #C9AB81;
   padding: 5px 20px;
   border-radius: 7px;
   transition: all ease-in 0.3s;
 }
-.header_box_actions-request:hover {
+.main_box_content_actions-request:hover {
   background-color: #C9AB81;
 }
-
 .main_about {
   padding: 100px 0;
   background-color: #000;
@@ -198,13 +231,13 @@ body {
   height: 100%;
 }
 .main_statistics_box_items {
-  width: 20%;
+  width: 23%;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80%;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 2px;
   border: 1px solid #fff;
 }
 .main_statistics_box_items > span {
@@ -213,7 +246,7 @@ body {
 }
 .main_statistics_box_items-number {
   color: #C9AB81;
-  font-size: 22px;
+  font-size: 35px;
 }
 .main_stations {
   padding: 50px 0;
