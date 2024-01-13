@@ -215,6 +215,64 @@ body {
   color: #C9AB81;
   font-size: 22px;
 }
+.main_stations {
+  padding: 50px 0;
+  height: 1050px;
+}
+.main_stations_box {
+  width: 80%;
+  margin: auto;
+  height: 800px;
+}
+.main_stations_box_icon, .main_stations_box_description, .main_stations_box_places {
+  margin: 0 0 20px 0;
+}
+.main_stations_box_icon i {
+  font-weight: 800;
+  font-size: 25px;
+  color: #C9AB81;
+}
+.main_stations_box_description h4 {
+  margin: 0 0 30px 0;
+  color: #C9AB81;
+}
+.main_stations_box_description p {
+  line-height: 1.5;
+  font-size: 14px;
+  color: #B2B0B0;
+  margin: 0 0 18px 0;
+}
+.main_stations_box_places {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  color: #B2B0B0;
+}
+.main_stations_box_places ul li {
+  margin: 0 0 25px 0;
+}
+.main_stations_box_places ul li a {
+  padding: 15px 20px 5px 20px;
+  border: 1px solid #C9AB81;
+  border-radius: 7px;
+  color: #C9AB81 !important;
+  transition: all ease-in 0.4s;
+  font-size: 15px;
+  cursor: pointer;
+}
+.main_stations_box_places ul li a:hover {
+  color: #fff !important;
+  background-color: #C9AB81;
+}
+.main_stations_box_places video {
+  width: 488px;
+  height: auto;
+}
+
+.tarighat_text {
+  color: #C9AB81;
+}
 
 .bottom_navigation {
   position: fixed;
